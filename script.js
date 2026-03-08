@@ -1,7 +1,16 @@
 function convertToRoman(num) {
-    if (num === 0) return ''; // There is no Roman numeral for 0
+    if (num === 0) return ''; // Roman numerals have no representation for 0
 
+    // Roman numerals mapping, including subtractive notation
     const romanSymbols = [
+        ['C̅', 100000],
+        ['X̅C̅', 90000],
+        ['L̅', 50000],
+        ['X̅L̅', 40000],
+        ['X̅', 10000],
+        ['I̅X̅', 9000],
+        ['V̅', 5000],
+        ['I̅V̅', 4000],
         ['M', 1000],
         ['CM', 900],
         ['D', 500],
@@ -30,6 +39,9 @@ function convertToRoman(num) {
 }
 
 // Test examples
-console.log(convertToRoman(14));   // XIV
-console.log(convertToRoman(798));  // DCCXCVIII
-console.log(convertToRoman(3999)); // MMMCMXCIX
+console.log(convertToRoman(14));      // XIV
+console.log(convertToRoman(798));     // DCCXCVIII
+console.log(convertToRoman(3999));    // MMMCMXCIX
+console.log(convertToRoman(10000));   // X̅
+console.log(convertToRoman(45000));   // X̅L̅V̅
+console.log(convertToRoman(99999));   // X̅C̅I̅X̅CMXCIX
